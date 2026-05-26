@@ -1,0 +1,12 @@
+C:\Users\Timofey\Desktop\гит\PetroGm\petroGM-test\GeometryLib\bin\Debug\net9.0\GeometryLib.deps.json
+C:\Users\Timofey\Desktop\гит\PetroGm\petroGM-test\GeometryLib\bin\Debug\net9.0\GeometryLib.dll
+C:\Users\Timofey\Desktop\гит\PetroGm\petroGM-test\GeometryLib\bin\Debug\net9.0\GeometryLib.pdb
+C:\Users\Timofey\Desktop\гит\PetroGm\petroGM-test\GeometryLib\obj\Debug\net9.0\GeometryLib.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Timofey\Desktop\гит\PetroGm\petroGM-test\GeometryLib\obj\Debug\net9.0\GeometryLib.AssemblyInfoInputs.cache
+C:\Users\Timofey\Desktop\гит\PetroGm\petroGM-test\GeometryLib\obj\Debug\net9.0\GeometryLib.AssemblyInfo.cs
+C:\Users\Timofey\Desktop\гит\PetroGm\petroGM-test\GeometryLib\obj\Debug\net9.0\GeometryLib.csproj.CoreCompileInputs.cache
+C:\Users\Timofey\Desktop\гит\PetroGm\petroGM-test\GeometryLib\obj\Debug\net9.0\GeometryLib.sourcelink.json
+C:\Users\Timofey\Desktop\гит\PetroGm\petroGM-test\GeometryLib\obj\Debug\net9.0\GeometryLib.dll
+C:\Users\Timofey\Desktop\гит\PetroGm\petroGM-test\GeometryLib\obj\Debug\net9.0\refint\GeometryLib.dll
+C:\Users\Timofey\Desktop\гит\PetroGm\petroGM-test\GeometryLib\obj\Debug\net9.0\GeometryLib.pdb
+C:\Users\Timofey\Desktop\гит\PetroGm\petroGM-test\GeometryLib\obj\Debug\net9.0\ref\GeometryLib.dll

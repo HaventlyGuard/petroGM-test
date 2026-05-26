@@ -1,0 +1,64 @@
+version: '3.8'
+
+services:
+  geometry-lib:
+    build:
+      context: .
+      dockerfile: GeometryLib/Dockerfile
+      target: build
+    image: geometry-lib:latest
+    container_name: geometry-lib
+    volumes:
+      # Экспортируем собранную DLL наружу
+      - ./output/lib:/packages
+    command: echo "Library built successfully"
+
+  geometry-test:
+    build:
+      context: .
+      dockerfile: GeometryTest/Dockerfile
+    image: geometry-test:latest
+    container_name: geometry-test
+    profiles:
+      - test
+    environment:
+      - DOTNET_SYSTEM_GLOBALIZATION_INVARIANT=false
+    depends_on:
+      geometry-lib:
+        condition: service_completed_successfully
+
+  geometry-app:
+    build:
+      context: .
+      dockerfile: GeometryApp/Dockerfile
+    image: geometry-app:latest
+    container_name: geometry-app
+    environment:
+      - DOTNET_SYSTEM_GLOBALIZATION_INVARIANT=false
+    volumes:
+      # Монтируем свой input.txt (если нужно)
+      - ./GeometryApp/input.txt:/app/input.txt:ro
+      # Или монтируем всю папку с данными
+      - ./data:/app/data:ro
+    stdin_open: true
+    tty: true
+    depends_on:
+      geometry-lib:
+        condition: service_completed_successfully
+
+  geometry-app-custom:
+    build:
+      context: .
+      dockerfile: GeometryApp/Dockerfile
+    image: geometry-app:latest
+    container_name: geometry-app-custom
+    profiles:
+      - custom
+    environment:
+      - DOTNET_SYSTEM_GLOBALIZATION_INVARIANT=false
+    volumes:
+      - ./my_shapes.txt:/app/custom_input.txt:ro
+    command: ["/app/custom_input.txt"]
+    depends_on:
+      geometry-lib:
+        condition: service_completed_successfully

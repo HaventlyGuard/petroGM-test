@@ -5,6 +5,6 @@ namespace GeometryLib.Core
     public interface IShape
     {
         string Draw();
-        IntersectionResult Intersect(IShape other);
+        string ShapeType { get; }
     }
 }

@@ -14,7 +14,21 @@ namespace GeometryLib.Core
         }
         
         public override string ToString() => $"({X}, {Y})";
-        public bool Equals(PointD other) => X.Equals(other.X) && Y.Equals(other.Y);
+        
+        public bool Equals(PointD other) 
+            => Math.Abs(X - other.X) < 1e-9 && Math.Abs(Y - other.Y) < 1e-9;
+            
+        public override bool Equals(object? obj) 
+            => obj is PointD other && Equals(other);
+            
+        public override int GetHashCode() 
+            => HashCode.Combine(X, Y);
+            
+        public static bool operator ==(PointD left, PointD right) 
+            => left.Equals(right);
+            
+        public static bool operator !=(PointD left, PointD right) 
+            => !left.Equals(right);
       
     }
 }
